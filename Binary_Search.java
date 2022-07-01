@@ -1,3 +1,10 @@
+//Scanner class is used to take input from user
+//arr[] - Array is decleared
+//l - Starting point of array
+//m - Ending Point of Array
+//x - Number to be Searched
+//mid - Middle Point in Array
+
 import java.util.Scanner;
 class Binary_Search
 {
@@ -5,15 +12,15 @@ class Binary_Search
     {
         if(m >= 1)
         {
-            int mid = l + (m - 1) / 2;
+            int mid = l + (m-1) / 2;
             if(arr[mid] == x)
                 return mid;
 
             if(arr[mid] > x)
-                return binarySearch(arr, l, mid-1, x);
+                return binarySearch(arr, l, mid-1, x); // if searched number is smaller than the middle point, so ending point is taken as (mid-1)
 
             if(arr[mid] < x)
-                return binarySearch(arr, mid+1, m, x);
+                return binarySearch(arr, mid+1, m, x); // if searched number is greater that the middle point, so starting point is taken as (mid+1)
         }
         return -1;
     }
@@ -26,7 +33,7 @@ class Binary_Search
         {
             arr[i] = sc.nextInt();
         }
-        Binary_Search ob = new Binary_Search();
+        Binary_Search ob = new Binary_Search(); // Object is created
         int x = sc.nextInt();
         int result = ob.binarySearch(arr, 0, n-1, x);
         if(result == -1)
