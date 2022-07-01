@@ -24,16 +24,19 @@ class Binary_Search
         }
         return -1;
     }
-    public static void main(String[] args)
+   public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of array");
         int n = sc.nextInt();
         int arr[] = new int[n];
+        System.out.println("Enter the elements of array");
         for(int i=0; i<n; i++)
         {
             arr[i] = sc.nextInt();
         }
-        Binary_Search ob = new Binary_Search(); // Object is created
+        Binary_Search ob = new Binary_Search();
+        System.out.println("Enter the number to be searched");
         int x = sc.nextInt();
         int result = ob.binarySearch(arr, 0, n-1, x);
         if(result == -1)
@@ -42,4 +45,3 @@ class Binary_Search
                     System.out.println("Element is Present and found at Index" + result);
     }
 }
-
